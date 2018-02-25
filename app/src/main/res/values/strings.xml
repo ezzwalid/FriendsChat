@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Friends Chat</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="storage_reference" translatable="false">gs://friends-chat-7aaed.appspot.com/images</string>
+    <string name="data_base_users_reference">users</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="Dialogs_reference">Dialogs</string>
+    <string name="title_activity_create_group">CreateGroupActivity</string>
+    <string name="title_activity_group_chat">GroupChatActivity</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+</resources>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "444812230023",
+    "firebase_url": "https://friends-chat-7aaed.firebaseio.com",
+    "project_id": "friends-chat-7aaed",
+    "storage_bucket": "friends-chat-7aaed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444812230023:android:3b6553e86dd01364",
+        "android_client_info": {
+          "package_name": "com.example.prins.friendschat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444812230023-l1ip1alu55rtmcrtc2l8r5ck2r4410qn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnPaOHtYLy1kcaf4lM2KbiFd5vihl8fpM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
