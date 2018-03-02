@@ -17,6 +17,9 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.prins.friendschat.Dtos.User;
+import com.example.prins.friendschat.async.AsyncAction;
+import com.example.prins.friendschat.async.OnRequestCompletedListener;
+import com.example.prins.friendschat.async.UiException;
 import com.example.prins.friendschat.helpers.Utils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -136,6 +139,8 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void saveImage(Uri path){
         progressBar.setVisibility(View.VISIBLE);
         String file_name = path.getPath().substring(path.getPath().lastIndexOf("/") + 1);
@@ -181,4 +186,6 @@ public class SignUpActivity extends AppCompatActivity {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+
+
 }

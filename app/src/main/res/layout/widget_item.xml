@@ -12,7 +12,7 @@
             android:layout_height="50dp"
             android:layout_margin="10dp"
             android:layout_gravity="center"
-            android:contentDescription="this is user image"/>
+            android:contentDescription="@string/this_is_user_image"/>
 
         <TextView
             android:id="@+id/user_name"

@@ -29,7 +29,7 @@
                 android:layout_height="@dimen/_30sdp"
                 android:scaleType="fitCenter"
                 android:layout_gravity="center"
-                android:contentDescription="user name image"
+                android:contentDescription="@string/user_name_image"
                 android:src="@drawable/ic_account_circle_black_36dp"/>
 
             <TextView
@@ -54,7 +54,7 @@
                 android:layout_height="@dimen/_30sdp"
                 android:scaleType="fitCenter"
                 android:layout_gravity="center"
-                android:contentDescription="user email image"
+                android:contentDescription="@string/user_email_image"
                 android:src="@drawable/ic_email_black_36dp"/>
 
             <TextView
@@ -72,7 +72,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/_60sdp"
             android:layout_marginBottom="@dimen/_20sdp"
-            android:text="Logout"/>
+            android:text="@string/logout"/>
 
     </LinearLayout>
 

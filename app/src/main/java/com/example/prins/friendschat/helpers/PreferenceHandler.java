@@ -6,6 +6,11 @@ import android.provider.Settings;
 
 
 import com.example.prins.friendschat.Dtos.User;
+import com.example.prins.friendschat.async.AsyncAction;
+import com.example.prins.friendschat.async.AsyncPerformer;
+import com.example.prins.friendschat.async.AsyncQueue;
+import com.example.prins.friendschat.async.OnRequestCompletedListener;
+import com.example.prins.friendschat.async.UiException;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -30,14 +35,27 @@ public class PreferenceHandler {
         sharedPreferences = context.getSharedPreferences(PREFERENCE_KEY, MODE_PRIVATE);
     }
     //===================================================================
-    public void addUser(User user){
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(USER_ID_KEY, user.getUserId());
-        editor.putString(USER_EMAIL_KEY, user.getE_mail());
-        editor.putString(USER_NAME_KEY, user.getName());
-        editor.putString(USER_IMAGE_KEY, user.getImage_url());
-        editor.commit();
-        Utils.updateWidgets(context);
+    public void addUser(final User user, AsyncQueue asyncQueue, OnRequestCompletedListener<Boolean> onRequestCompletedListener){
+        AsyncAction asyncAction = new AsyncAction() {
+            @Override
+            public Object run() throws UiException {
+                Boolean status = Boolean.FALSE;
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(USER_ID_KEY, user.getUserId());
+                editor.putString(USER_EMAIL_KEY, user.getE_mail());
+                editor.putString(USER_NAME_KEY, user.getName());
+                editor.putString(USER_IMAGE_KEY, user.getImage_url());
+                status = editor.commit();
+                if (status)
+                    Utils.updateWidgets(context);
+
+                return status;
+            }
+        };
+
+        AsyncPerformer asyncPerformer = new AsyncPerformer(asyncAction, onRequestCompletedListener);
+        asyncPerformer.execute();
+        asyncQueue.addTask(asyncPerformer);
     }
     //===================================================================
     public User getUser(){

@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.prins.friendschat.Dtos.User;
+import com.example.prins.friendschat.async.AsyncQueue;
+import com.example.prins.friendschat.async.OnRequestCompletedListener;
 import com.example.prins.friendschat.helpers.PreferenceHandler;
 import com.example.prins.friendschat.helpers.Utils;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -48,12 +50,14 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     ValueEventListener userCallback;
     PreferenceHandler preferenceHandler;
+    AsyncQueue asyncQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        asyncQueue = new AsyncQueue();
         setSupportActionBar(toolbar);
         preferenceHandler = new PreferenceHandler(this);
         if (preferenceHandler.getUser() != null){
@@ -112,11 +116,9 @@ public class LoginActivity extends AppCompatActivity {
         userCallback = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                progressBar.setVisibility(View.GONE);
-                preferenceHandler.addUser(dataSnapshot.getValue(User.class));
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                startActivity(intent);
-                finish();
+                if (dataSnapshot.exists()){
+                    addUserToSharedPreference(dataSnapshot);
+                }
             }
 
             @Override
@@ -129,10 +131,36 @@ public class LoginActivity extends AppCompatActivity {
         databaseReference.child(userId).addListenerForSingleValueEvent(userCallback);
     }
 
+    private void addUserToSharedPreference(DataSnapshot dataSnapshot){
+        progressBar.setVisibility(View.GONE);
+        preferenceHandler.addUser(dataSnapshot.getValue(User.class), asyncQueue,
+                new OnRequestCompletedListener<Boolean>() {
+                    @Override
+                    public void onSuccess(Boolean response) {
+                        if (response){
+                            Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+
+                    @Override
+                    public void onFail(Exception ex) {
+
+                    }
+
+                    @Override
+                    public void onProgress(Integer progress) {
+
+                    }
+                });
+    }
+
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        asyncQueue.stopAllTasks();
         if (userCallback != null){
             databaseReference.removeEventListener(userCallback);
         }

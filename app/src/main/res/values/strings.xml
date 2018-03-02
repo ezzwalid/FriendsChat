@@ -15,4 +15,24 @@
     <string name="title_activity_group_chat">GroupChatActivity</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="write_your_message_here">Write your message here</string>
+    <string name="send">Send</string>
+
+    <string name="this_is_the_app_logo">this is the app logo</string>
+
+    <string name="login">Login</string>
+    <string name="don_t_have_account_register_now">Don\'t have account, Register now.</string>
+  `
+    <string name="user_name">User name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="re_password">Re Password</string>
+    <string name="register">Register</string>
+    <string name="create_new_group">Create new Group</string>
+    <string name="write_your_group_name">Write your group name</string>
+    <string name="this_is_add_button">this is add button</string>
+    <string name="user_name_image">user name image</string>
+    <string name="user_email_image">user email image</string>
+    <string name="logout">Logout</string>
+    <string name="this_is_user_image">this is user image</string>
 </resources>

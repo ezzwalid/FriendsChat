@@ -27,7 +27,7 @@
                 android:textColor="#0c3805"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:textSize="@dimen/_13sdp"
-                android:text="Create new Group"/>
+                android:text="@string/create_new_group"/>
 
             <View
                 android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                 android:textColor="#0c3805"
                 android:paddingStart="@dimen/_25sdp"
                 android:paddingEnd="@dimen/_25sdp"
-                android:hint="Write your group name"
+                android:hint="@string/write_your_group_name"
                 android:textSize="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/group_name_ed"/>
@@ -67,7 +67,7 @@
                     android:layout_gravity="center"
                     android:src="@mipmap/plus_icon"
                     android:visibility="visible"
-                    android:contentDescription="this is add button"/>
+                    android:contentDescription="@string/this_is_add_button"/>
 
                 <ProgressBar
                     android:id="@+id/create_project_btn_progress"
