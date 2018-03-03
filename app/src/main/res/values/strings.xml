@@ -35,4 +35,17 @@
     <string name="user_email_image">user email image</string>
     <string name="logout">Logout</string>
     <string name="this_is_user_image">this is user image</string>
+    <string name="date_format">d MMM yyyy, HH:mm</string>
+    <string name="went_wrong">Some thing went wrong, please try again</string>
+    <string name="select_join_group">Please select at least three useres to join the group.</string>
+    <string name="empty_filed">Filed Empty.</string>
+    <string name="group_create_success">Group created successfully</string>
+    <string name="type_message">Please type a message</string>
+    <string name="chat">Chat</string>
+    <string name="group">Group</string>
+    <string name="profile">Profile</string>
+    <string name="enter_all_info">Enter all of your information please.</string>
+    <string name="register_success">User register successfully</string>
+    <string name="sign_up">SignUp</string>
+    <string name="select_pic">Select Picture</string>
 </resources>

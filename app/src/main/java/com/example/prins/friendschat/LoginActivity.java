@@ -105,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                     getUserFromDb(task.getResult().getUser().getUid());
                 }
                 else {
-                    Log.e("Login", task.getException().getLocalizedMessage());
+                    Log.e(getString(R.string.login), task.getException().getLocalizedMessage());
                 }
             }
         });

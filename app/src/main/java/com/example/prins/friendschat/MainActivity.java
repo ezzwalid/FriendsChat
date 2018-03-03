@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initPager(){
         GenericViewPagerAdapter adapter = new GenericViewPagerAdapter(getSupportFragmentManager());
-        adapter.addPage(new ChatFragment(), "Chat");
-        adapter.addPage(new GroupsFragment(), "Group");
-        adapter.addPage(new ProfileFragment(), "Profile");
+        adapter.addPage(new ChatFragment(), getString(R.string.chat));
+        adapter.addPage(new GroupsFragment(), getString(R.string.group));
+        adapter.addPage(new ProfileFragment(), getString(R.string.profile));
         mainViewPager.setAdapter(adapter);
         mainTabs.setupWithViewPager(mainViewPager);
     }

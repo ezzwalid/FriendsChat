@@ -127,7 +127,7 @@ public class GroupChatActivity extends AppCompatActivity {
                     msgEd.setText("");
                 }
                 else {
-                    Toast.makeText(getBaseContext(), "Sorry some thing went wrong, please try again.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), getString(R.string.went_wrong), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -144,7 +144,7 @@ public class GroupChatActivity extends AppCompatActivity {
         if (!msgEd.getText().toString().isEmpty()) {
             sendMsg(msgEd.getText().toString());
         } else {
-            Toast.makeText(this, "Please type a message", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.type_message, Toast.LENGTH_SHORT).show();
         }
     }
 }

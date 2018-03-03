@@ -134,7 +134,7 @@ public class ChatActivity extends AppCompatActivity {
                             msgDatabaseReference = dialogsDatabaseReference.child(dialog.getId()).child(Msg.KEY);
                             msgDatabaseReference.addChildEventListener(msgEventListener);
                         } else {
-                            Toast.makeText(getBaseContext(), "Some thing went wrong, please try again", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getBaseContext(), R.string.went_wrong, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -209,7 +209,7 @@ public class ChatActivity extends AppCompatActivity {
             sendProgress.setVisibility(View.VISIBLE);
             sendMsg(msgEd.getText().toString());
         } else {
-            Toast.makeText(this, "Please type a message", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.type_message, Toast.LENGTH_SHORT).show();
         }
     }
 }

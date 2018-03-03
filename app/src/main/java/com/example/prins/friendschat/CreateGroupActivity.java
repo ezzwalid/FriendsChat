@@ -85,7 +85,7 @@ public class CreateGroupActivity extends AppCompatActivity{
             CreateGroupDialogFragment.newInstance(selectedUsers).show(getSupportFragmentManager(), "");
         }
         else {
-            Toast.makeText(this, "Please select at least three useres to join the group.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.select_join_group, Toast.LENGTH_SHORT).show();
         }
     }
 

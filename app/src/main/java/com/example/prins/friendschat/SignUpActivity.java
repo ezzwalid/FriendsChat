@@ -93,7 +93,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private boolean validate(){
         if (!Utils.isEmailValid(emailEd.getText().toString()) || userNameEd.getText().toString().isEmpty() || passwordEd.getText().toString().isEmpty() || !rePasswordEd.getText().toString().equals(passwordEd.getText().toString()) ){
-            Toast.makeText(this, "Enter all of your information please.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.enter_all_info, Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -129,7 +129,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()){
-                    Toast.makeText(getBaseContext(), "User register successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), R.string.register_success, Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 else {
@@ -153,7 +153,7 @@ public class SignUpActivity extends AppCompatActivity {
                     imagePath = task.getResult().getDownloadUrl().toString();
                 }
                 else {
-                    Log.e("SignUp", task.getException().getLocalizedMessage());
+                    Log.e(getString(R.string.sign_up), task.getException().getLocalizedMessage());
                 }
             }
         });
@@ -163,7 +163,7 @@ public class SignUpActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_PICK);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
+        startActivityForResult(Intent.createChooser(intent, getString(R.string.select_pic)), PICK_IMAGE);
     }
 
 

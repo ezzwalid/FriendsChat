@@ -103,7 +103,7 @@ public class CreateGroupDialogFragment extends DialogFragment{
             projectImage.setVisibility(View.GONE);
             createDialog(selectedUsers, nameEd.getText().toString());
         } else {
-            nameEd.setError("Filed Empty.");
+            nameEd.setError(getString(R.string.empty_filed));
         }
     }
     //===================================================================
@@ -129,10 +129,10 @@ public class CreateGroupDialogFragment extends DialogFragment{
                                 userReference.child(user.getUserId()).child(UserGroups.KEY).child(userGroups.getDialogId())
                                         .setValue(userGroups);
                             }
-                            Toast.makeText(getContext(), "Group created successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), R.string.group_create_success, Toast.LENGTH_SHORT).show();
                             getActivity().finish();
                         } else {
-                            Toast.makeText(getContext(), "Some thing went wrong please try again.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), getString(R.string.went_wrong), Toast.LENGTH_SHORT).show();
                             dismiss();
                         }
 
